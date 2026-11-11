@@ -14,14 +14,15 @@ Required Python libraries :
 - multixrank
 
 Data files to download: 
-- BioPAX ontology: https://www.biopax.org/release/biopax-level3.owl
-- Reactome BioPAX export (here the version 96 is used, but use the following link to download the latest version): https://download.reactome.org/version/biopax.zip
+- Reactome BioPAX export (here the version 96 is used, but use the following link to download the latest version): https://download.reactome.org/version/biopax.zip 
+(place the Reactome BioPAX export in the `Data/BioPAX/ReactomeBioPAX` folder)
 
 1 - We start by generating a pathway-centered abstraction on BioPAX pathways that extracts the compositional hierarchy and sequences of pathways from the BioPAX export. The scripts to generate this abstraction are located in the `Scripts/01_PathwayAbstraction` folder. Generated pathway-cenetered abstractions of the 29 Reactome top-level pathways (version 96) are located in the `Results/PathwayAbstraction/01_TopPathways` folder. The pathway-centered abstraction of the whole Reactome knowledge base (version 96) is located in the `Results/PathwayAbstraction/02_Reactome96Global` folder.
 
-2 - Then we use our pathway-centered abstraction to weight protein co-memberhsip interactions. The scripts to generate weighted pathway co-membership networks are located in the `Scripts/02_PathwayComembershipAbstraction` folder. Weighted co-membership networks of the 29 Reactome top-level pathways (version 96) are located in the `Results/PathwayComembership/02_WeightedComembershipCliques` folder. The weighted co-membership clique of the entire Reactome pathway knowledge base (version 96) is located in the `Results/PathwayComembership/06_ScalingReactome` folder.
+2 - Then we use our pathway-centered abstraction to weight protein co-memberhsip interactions. The scripts to generate weighted pathway co-membership networks are located in the `Scripts/02_PathwayComembershipAbstraction` folder. Weighted co-membership networks of the 29 Reactome top-level pathways (version 96) are generated in the `Results/PathwayComembership/02_WeightedComembershipCliques` folder. The weighted co-membership clique of the entire Reactome pathway knowledge base (version 96) is generated in the `Results/PathwayComembership/06_ScalingReactome` folder.
  
 3 - Our weighted pathway co-membership abstraction method is validated using a gene prioritization experiment on cancer hallmarks gene sets (from https://cancerhallmarks.com/) using random walk with restart. Associated scripts are located in the `Scripts/03_RWRComembership` folder. RWR results are located in the `Results/ValidationRWROutput` folder.
+Since the weighted pathway co-membership networks of Reactome used for the RWR experiment are too heavy to be uploaded on GitHub, they can be dowloaded via the following Zenodo repository: https://zenodo.org/records/23372223
 
 ### References
 
